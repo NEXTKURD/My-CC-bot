@@ -13,7 +13,7 @@ API_ID = 30404607
 API_HASH = "a09796249758595ac1ed06da9eb4dc1f"
 BOT_TOKEN = "8869335780:AAEKJGZg4LJnKw_pC-f3vBFShfKhe8VwCug" # Replace with your Bot Token
 ADMIN_ID = [7013641187] # Replace with your Admin ID(s)
-GROUP_ID = -1004447821899# Replace with your Group ID
+GROUP_ID = -5591956260# Replace with your Group ID
 
 # Files
 PREMIUM_FILE = "premium.json"
