@@ -1,12 +1,13 @@
 import logging
 import requests
+import os # ڤێ زێدە بکە
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-# ئاگەهدارکرنا لۆگێن بۆتی
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-TOKEN = "8869335780:AAEKJGZg4LJnKw_pC-f3vBFShfKhe8VwCug"
+# Token-ێ خۆ ژ Environment Variables بخوینە
+TOKEN = os.getenv("TOKEN") 
 MY_CHAT_ID = "7013641187"
 
 async def process_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -17,12 +18,11 @@ async def process_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("بوهێلە، ئەز یێ ب ڕێیا سێرڤەری دچمه سەر سایتێ...")
 
     try:
-        # کارکرن ل سەر سایتێ ب ڕێیا API (ئەڤە بێی برۆسەرە و زووترە)
-        # ل ڤێرێ پێدڤییە تو URL-یا ڕاستەقینە یا POST-ا سایتێ بزانی
-        url = "https://uncoder.eu.org/cc-checker/check" # نموونە
+        url = "https://uncoder.eu.org/cc-checker/check"
         data = {'card': user_text}
         
-        response = requests.post(url, data=data)
+        # ل ڤێرێ بکارئینانا 'timeout' گەلەک یا گرنگە داکو سێرڤەر نەراوەستیت
+        response = requests.post(url, data=data, timeout=10)
         
         result = "ئەنجام: " + response.text
         await update.message.reply_text(result)
@@ -31,6 +31,7 @@ async def process_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"ئاریشەیەک هات: {str(e)}")
 
 if __name__ == '__main__':
+    # گوهۆڕینا کێم ل سەر کارپێکرنێ
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), process_data))
     app.run_polling()
