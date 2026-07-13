@@ -2,3 +2,4 @@ python-telegram-bot
 selenium
 requests
 telethon
+aiohttp
