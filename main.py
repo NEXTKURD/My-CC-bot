@@ -602,12 +602,12 @@ async def test_single_site(site, test_card="4031630422575208|01|2030|280", user_
 client = TelegramClient('cc_bot', API_ID, API_HASH)
 
 def banned_user_message():
-    return "🚫 **𝙔𝙤𝙪 𝘼𝙧𝙚 𝘽𝙖𝙣𝙣𝙚𝙙!**\n\n𝙔𝙤𝙪 𝙖𝙧𝙚 𝙣𝙤𝙩 𝙖𝙡𝙡𝙤𝙬𝙚𝙙 𝙩𝙤 𝙪𝙨𝙚 𝙩𝙝𝙞𝙨 𝙗𝙤𝙩.\n\n𝙁𝙤𝙧 𝙖𝙥𝙥𝙚𝙖𝙡, 𝙘𝙤𝙣𝙩𝙖𝙘𝙩 @𝙈𝙤𝙙_𝘽𝙮_𝙆𝙖𝙢𝙖𝙡"
+    return "🚫 **𝙔𝙤𝙪 𝘼𝙧𝙚 𝘽𝙖𝙣𝙣𝙚𝙙!**\n\n𝙔𝙤𝙪 𝙖𝙧𝙚 𝙣𝙤𝙩 𝙖𝙡𝙡𝙤𝙬𝙚𝙙 𝙩𝙤 𝙪𝙨𝙚 𝙩𝙝𝙞𝙨 𝙗𝙤𝙩.\n\n𝙁𝙤𝙧 𝙖𝙥𝙥𝙚𝙖𝙡, 𝙘𝙤𝙣𝙩𝙖𝙘𝙩 @h9grr"
 
 def access_denied_message_with_button():
     """Returns access denied message and join group button"""
     message = "🚫 **Access Denied!** This command requires premium access or group usage."
-    buttons = [[Button.url("🚀 Join Group for Free Access", "https://t.me/+pNplrRLrEGY5NTU0")]]
+    buttons = [[Button.url("🚀 Join Group for Free Access", "https://telegram.me/+YDGUgZTcBNk3NTJi")]]
     return message, buttons
 
 # --- Bot Command Handlers ---
