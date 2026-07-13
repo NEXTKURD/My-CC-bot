@@ -2224,7 +2224,7 @@ async def main():
 
     
     print("𝘽𝙊𝙏 𝙍𝙐𝙉𝙉𝙄𝙉𝙂 💨")
-    await client.start(bot_token=8869335780:AAEKJGZg4LJnKw_pC-f3vBFShfKhe8VwCug)
+    await client.start(bot_token=BOT_TOKEN)
     await client.run_until_disconnected()
 
 if __name__ == "__main__":
